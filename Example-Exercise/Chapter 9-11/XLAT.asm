@@ -1,0 +1,30 @@
+;EXAMPLE 10.5 
+
+
+.MODEL SMALL
+
+.STACK 100H
+
+.DATA
+
+    TABLE DB 030H, 031H,032H,033H
+          DB 034H
+
+.CODE
+
+
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV AL,04H
+    LEA BX,TABLE
+    XLAT
+    
+    
+
+MOV AH,4CH
+INT 21H
+
+MAIN ENDP
+   END MAIN
